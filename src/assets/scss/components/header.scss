@@ -1,0 +1,56 @@
+.header {
+  &__container {
+    @include flex-all-between;
+  }
+
+  // .header__nav
+
+  &__nav {
+  }
+}
+.hidden {
+}
+.container {
+}
+.nav {
+  // .nav__list
+
+  &__list {
+    @include flex-align-center;
+    gap: 32px;
+  }
+
+  // .nav__item
+
+  &__item {
+  }
+
+  // .nav__link
+
+  &__link {
+    position: relative;
+    font-weight: 500;
+    line-height: 162%;
+    color: var(--neutral-color-100);
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -5px;
+      height: 1px;
+      background-color: var(--neutral-color-100);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
